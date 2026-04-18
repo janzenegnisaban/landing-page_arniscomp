@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KaliArena — Arnis Competition Platform</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo">
+        <img src="assets/logo.png" alt="KaliArena" onerror="this.style.display='none'">
+        <div>
+          <div class="nav-logo-text">KaliArena</div>
+          <div class="nav-logo-sub">Arnis Competition Platform</div>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <button onclick="scrollToSection('features')">Platform</button>
+        <button onclick="scrollToSection('sign-in')">Sign in</button>
+        <button onclick="scrollToSection('roles')">Roles</button>
+        <button onclick="scrollToSection('faq')">FAQ</button>
+        <button onclick="scrollToSection('cta')">Get started</button>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="https://janzenegnisaban.github.io/coach-portal/" class="btn btn-ghost btn-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          Sign in
+        </a>
+        <a href="https://janzenegnisaban.github.io/coach-portal/signup.html" class="btn btn-red btn-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+          Get Started
+        </a>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <button onclick="scrollToSection('features');toggleMenu()">Platform</button>
+      <button onclick="scrollToSection('sign-in');toggleMenu()">Sign in</button>
+      <button onclick="scrollToSection('roles');toggleMenu()">Roles</button>
+      <button onclick="scrollToSection('faq');toggleMenu()">FAQ</button>
+      <button onclick="scrollToSection('cta');toggleMenu()">Get started</button>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="top">
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="blob blob-c"></div>
+    <div class="dot-grid"></div>
+
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <span>KaliArena · Arnis Competition Platform</span>
+        <span class="pulse"></span>
+      </div>
+
+      <h1 class="hero-title">
+        <span style="display:block">One home for</span>
+        <span class="gradient-text">every role in Arnis</span>
+      </h1>
+
+      <p class="hero-sub">
+        Whether you lead a team or run events — KaliArena connects registration,
+        competitions, and operations in a single portal.
+      </p>
+
+      <div class="hero-cta">
+        <a href="https://janzenegnisaban.github.io/coach-portal/signup.html" class="btn btn-red btn-lg">
+          Register as a Coach
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="https://janzenegnisaban.github.io/coach-portal/" class="btn btn-outline btn-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          Coach sign in
+        </a>
+      </div>
+
+      <!-- Sign in by role -->
+      <div id="sign-in" style="scroll-margin-top:6rem">
+        <p class="role-section-label">Sign in by role</p>
+        <p class="role-section-sub">Pick the portal that matches your account — coaches and organizers sign in here.</p>
+
+        <div class="role-grid">
+          <!-- Coach -->
+          <div class="role-card coach">
+            <div class="role-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="role-card-label">Coach</div>
+            <div class="role-card-hint">Public sign in · team dashboard</div>
+            <div class="role-card-actions">
+              <a href="https://janzenegnisaban.github.io/coach-portal/" class="btn btn-coach btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                Sign in
+              </a>
+              <a href="https://janzenegnisaban.github.io/coach-portal/signup.html" class="role-learn">
+                Register
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Organizer -->
+          <div class="role-card organizer">
+            <div class="role-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="role-card-label">Organizer</div>
+            <div class="role-card-hint">Role request + approval required</div>
+            <div class="role-card-actions">
+              <a href="https://janzenegnisaban.github.io/organizer-portal/" class="btn btn-organizer btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                Sign in
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── FEATURES ── -->
+  <section class="section" id="features" style="scroll-margin-top:5rem">
+    <div class="section-inner">
+      <div class="text-center reveal">
+        <div class="section-tag tag-red">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Platform Features
+        </div>
+        <h2 class="section-title">Built for every role</h2>
+        <p class="section-sub">Coaches and organizers each get workflows tuned to how they run Arnis competitions.</p>
+      </div>
+
+      <div class="features-grid">
+        <button class="feature-card active" onclick="setFeature(0,this)">
+          <div class="feature-icon red-grad">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="feature-active-dot"><span style="width:6px;height:6px;border-radius:50%;background:#dc2626;animation:pulse 2s infinite"></span> Active</div>
+          <div class="feature-name">Coaches &amp; Teams</div>
+          <div class="feature-highlight">Rosters &amp; Registration</div>
+          <div class="feature-desc">Register your team, manage players and categories, join approved events, and follow schedules, brackets, and results.</div>
+        </button>
+
+        <button class="feature-card" onclick="setFeature(1,this)">
+          <div class="feature-icon amber-grad">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="feature-active-dot"><span style="width:6px;height:6px;border-radius:50%;background:#dc2626;animation:pulse 2s infinite"></span> Active</div>
+          <div class="feature-name">Competition Workflow</div>
+          <div class="feature-highlight">From Draw to Finals</div>
+          <div class="feature-desc">Bracketing, match flow, scoring support, and display-friendly views so events run smoothly from registration to finals.</div>
+        </button>
+
+        <button class="feature-card" onclick="setFeature(2,this)">
+          <div class="feature-icon blue-grad">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="feature-active-dot"><span style="width:6px;height:6px;border-radius:50%;background:#dc2626;animation:pulse 2s infinite"></span> Active</div>
+          <div class="feature-name">Organizers</div>
+          <div class="feature-highlight">Events &amp; Notifications</div>
+          <div class="feature-desc">Run organizer-owned events, see pending or approved status, and send match details for league confirmation.</div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ROLES ── -->
+  <section class="section roles-section" id="roles" style="scroll-margin-top:5rem">
+    <div class="section-inner">
+      <div class="text-center reveal">
+        <div class="section-tag tag-amber">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Role Portals
+        </div>
+        <h2 class="section-title">How each role uses KaliArena</h2>
+        <p class="section-sub">Same platform — different experiences tailored to what you need.</p>
+      </div>
+
+      <div class="reveal" style="margin-top:2.5rem">
+        <div class="tabs-wrap">
+          <button class="tab-btn active-red" onclick="setTab('coaches',this,'active-red')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none" class="tab-icon"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            Coaches
+          </button>
+          <button class="tab-btn" onclick="setTab('organizers',this,'active-amber')">
+            Organizers
+          </button>
+        </div>
+
+        <div class="tab-panel active" id="tab-coaches">
+          <div class="tab-bar red-bar"></div>
+          <div class="tab-content">
+            <div class="tab-layout">
+              <div style="flex:1">
+                <div class="tab-header-badge" style="background:linear-gradient(135deg,#ef4444,#f97316)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  Coaches
+                </div>
+                <h3 class="tab-title">Your roster &amp; events</h3>
+                <p class="tab-desc">Sign up publicly, create your team profile, add players, and use the coach dashboard for schedules, brackets, and documents.</p>
+              </div>
+              <div class="tab-features">
+                <div class="tab-feature-item"><div class="tab-feature-dot" style="background:linear-gradient(135deg,#ef4444,#f97316)"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>Team Management</div>
+                <div class="tab-feature-item"><div class="tab-feature-dot" style="background:linear-gradient(135deg,#ef4444,#f97316)"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>Player Rosters</div>
+                <div class="tab-feature-item"><div class="tab-feature-dot" style="background:linear-gradient(135deg,#ef4444,#f97316)"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>Schedule Tracking</div>
+                <div class="tab-feature-item"><div class="tab-feature-dot" style="background:linear-gradient(135deg,#ef4444,#f97316)"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>Document Access</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-organizers">
+          <div class="tab-bar amber-bar"></div>
+          <div class="tab-content">
+            <div class="tab-layout">
+              <div style="flex:1">
+                <div class="tab-header-badge" style="background:linear-gradient(135deg,#f59e0b,#f97316)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Organizers
+                </div>
+                <h3 class="tab-title">Events &amp; notifications</h3>
+                <p class="tab-desc">Run organizer-owned events, see pending or approved status, and send match details for league confirmation.</p>
+              </div>
+              <div class="tab-features">
+                <div class="tab-feature-item"><div class="tab-feature-dot" style="background:linear-gradient(135deg,#f59e0b,#f97316)"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>Event Creation</div>
+                <div class="tab-feature-item"><div class="tab-feature-dot" style="background:linear-gradient(135deg,#f59e0b,#f97316)"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>Approval Status</div>
+                <div class="tab-feature-item"><div class="tab-feature-dot" style="background:linear-gradient(135deg,#f59e0b,#f97316)"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>Match Notifications</div>
+                <div class="tab-feature-item"><div class="tab-feature-dot" style="background:linear-gradient(135deg,#f59e0b,#f97316)"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>Bracket Management</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="section" id="faq" style="scroll-margin-top:5rem">
+    <div class="section-inner">
+      <div class="text-center reveal">
+        <div class="section-tag tag-blue">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          FAQ
+        </div>
+        <h2 class="section-title">Quick answers</h2>
+        <p class="section-sub">Everything you need to know before jumping in.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Who can sign up on the public site?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a">Coaches can register a team from this homepage. Organizers receive an invite link from your league, then sign in with the same account email.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Why do organizer events need approval?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a">League staff review proposed events before they appear for coach registration, so schedules and branding stay consistent with league rules.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Can I manage multiple teams as a coach?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a">Each coach account is linked to one team profile. If you need to manage multiple teams, contact your league organizer for assistance.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section" id="cta" style="scroll-margin-top:5rem">
+    <div class="reveal">
+      <div class="cta-box">
+        <div class="cta-bg"></div>
+        <div class="cta-overlay"></div>
+        <div class="cta-dots"></div>
+        <div class="cta-inner">
+          <div class="cta-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 2 12 8 18"/><polyline points="16 6 22 12 16 18"/></svg>
+          </div>
+          <h2 class="cta-title">Ready to compete?</h2>
+          <p class="cta-sub">New coaches can register below. Organizers usually join with an invite link from the league. Already have access? Use the sign-in buttons for your role above.</p>
+          <div class="cta-actions">
+            <a href="https://janzenegnisaban.github.io/coach-portal/signup.html" class="btn btn-white btn-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+              Create coach account
+            </a>
+            <a href="https://janzenegnisaban.github.io/coach-portal/" class="btn btn-outline-white btn-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+              Coach sign in
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/logo.png" alt="KaliArena" onerror="this.style.display='none'">
+            <span class="footer-logo-text">KaliArena</span>
+          </div>
+          <p>Arnis competition hub for coaches and organizers — registration, events, and results in one place.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>Sign in</h4>
+            <ul>
+              <li><a href="https://janzenegnisaban.github.io/coach-portal/">Coach</a></li>
+              <li><a href="https://janzenegnisaban.github.io/organizer-portal/">Organizer</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Register</h4>
+            <ul>
+              <li><a href="https://janzenegnisaban.github.io/coach-portal/signup.html">Register as a Coach</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Platform</h4>
+            <ul>
+              <li><a href="#features" onclick="scrollToSection('features')">Features</a></li>
+              <li><a href="#roles" onclick="scrollToSection('roles')">Role Portals</a></li>
+              <li><a href="#faq" onclick="scrollToSection('faq')">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 KaliArena. All rights reserved.</p>
+        <div class="footer-powered">
+          <span style="font-size:.75rem;color:#475569">Powered by</span>
+          <img src="assets/league-logo.jpg" alt="Pro-Active Arnis League">
+          <span>Pro-Active Arnis League</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
